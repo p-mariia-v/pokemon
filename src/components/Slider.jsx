@@ -11,6 +11,7 @@ const Slider = ({ label, value, min = 0, max = 100, color = "#4caf50" }) => {
         margin: "12px 24px 12px 12px",
       }}
     >
+      {/* label*/}
       {label && (
         <span
           style={{
@@ -31,7 +32,7 @@ const Slider = ({ label, value, min = 0, max = 100, color = "#4caf50" }) => {
           flex: 1,
         }}
       >
-        {/* доріжка */}
+        {/* slider */}
 
         <div
           style={{
@@ -45,7 +46,7 @@ const Slider = ({ label, value, min = 0, max = 100, color = "#4caf50" }) => {
             backgroundColor: "#e3e3e3",
           }}
         >
-          {/* заповнена частина */}
+          {/* full part slider */}
           <div
             style={{
               width: `${percent}%`,
@@ -56,7 +57,7 @@ const Slider = ({ label, value, min = 0, max = 100, color = "#4caf50" }) => {
           />
         </div>
 
-        {/* коло з HP */}
+        {/* circle */}
         <div
           style={{
             position: "absolute",
@@ -66,7 +67,7 @@ const Slider = ({ label, value, min = 0, max = 100, color = "#4caf50" }) => {
             width: 28,
             height: 28,
             borderRadius: "50%",
-            backgroundColor: "#fff",
+            backgroundColor: "#fbfbfb",
             border: "2px solid #9ca3af",
             boxShadow: "0 1px 4px rgba(0, 0, 0, 0.3)",
             display: "flex",

@@ -28,6 +28,7 @@ const PokemonCard = ({ id, name, type, hp, attack }) => {
         paddingTop: 40,
       }}
     >
+      {/* Header*/}
       <div
         style={{
           position: "absolute",
@@ -40,6 +41,7 @@ const PokemonCard = ({ id, name, type, hp, attack }) => {
           marginBotton: 20,
         }}
       >
+        {/* Type*/}
         <span
           style={{
             padding: "0px 16px",
@@ -55,7 +57,7 @@ const PokemonCard = ({ id, name, type, hp, attack }) => {
           {type}
         </span>
 
-        {/* тут пізніше буде кнопка «обране» */}
+        {/* favorits*/}
       </div>
       <img
         src={imageUrl}
