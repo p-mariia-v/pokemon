@@ -2,15 +2,23 @@ import { useState } from "react";
 import heroImg from "./assets/hero.png";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "./assets/vite.svg";
+import PokemonCard from "./components/PokemonCard";
+import Barplot from "./components/Barplot";
 import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [color, setColor] = useState("dodgerblue");
 
   return (
-    <>
-      <h1>Hello World!!!!!!</h1>
-    </>
+    <div
+      style={{
+        display: "flex",
+        gap: 24,
+        margin: 30,
+      }}
+    >
+      <PokemonCard />
+    </div>
   );
 }
 
