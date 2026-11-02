@@ -1,3 +1,5 @@
+import Slider from "./Slider";
+
 const PokemonCard = ({ id, name, type, hp, attack }) => {
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
   return (
@@ -20,10 +22,10 @@ const PokemonCard = ({ id, name, type, hp, attack }) => {
         alt={name}
         style={{ width: 125, height: 125, imageRendering: "pixelated" }}
       />
-      <h2 style={{ color: "#111" }}>{name}</h2>
+      <h2 style={{ color: "#373737" }}>{name}</h2>
       <p>Type: {type}</p>
-      <p>HP: {hp}</p>
-      <p>Attack: {attack}</p>
+      <Slider label="HP" value={hp} max={160} />
+      <Slider label="Attack" value={attack} max={160} />
     </div>
   );
 };
