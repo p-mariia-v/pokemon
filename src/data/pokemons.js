@@ -20,3 +20,5 @@ const pokemons = [
   { id: 130, name: "Gyarados", type: "Water", hp: 95, attack: 125 },
   { id: 148, name: "Dragonair", type: "Dragon", hp: 61, attack: 84 },
 ];
+
+export default pokemons;
