@@ -12,6 +12,7 @@ const PokemonCard = ({ id, name, type, hp, attack }) => {
       onMouseEnter={() => setIsHovered(true)}
       onMouseLeave={() => setIsHovered(false)}
       style={{
+        position: "relative",
         width: "100%",
         height: 300,
         backgroundColor: "#f5f5f5",
@@ -27,13 +28,41 @@ const PokemonCard = ({ id, name, type, hp, attack }) => {
         paddingTop: 40,
       }}
     >
+      <div
+        style={{
+          position: "absolute",
+          top: 12,
+          left: 12,
+          right: 12,
+          display: "flex",
+          justifyContent: "space-between",
+          alignItems: "center",
+          marginBotton: 20,
+        }}
+      >
+        <span
+          style={{
+            padding: "0px 16px",
+            borderRadius: 999,
+            backgroundColor: `${typeColor}66`,
+            color: "#1f1e1f",
+            fontSize: 11,
+            fontWeight: 600,
+            letterSpacing: 0.5,
+            textTransform: "lowercase",
+          }}
+        >
+          {type}
+        </span>
+
+        {/* тут пізніше буде кнопка «обране» */}
+      </div>
       <img
         src={imageUrl}
         alt={name}
         style={{ width: 125, height: 125, imageRendering: "pixelated" }}
       />
-      <h2 style={{ color: "#373737" }}>{name}</h2>
-      <p>Type: {type}</p>
+      <h2 style={{ color: "#373737", marginBottom: 30 }}>{name}</h2>
       <Slider label="HP" value={hp} max={160} />
       <Slider label="Attack" value={attack} max={160} />
     </div>
