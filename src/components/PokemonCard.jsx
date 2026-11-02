@@ -1,4 +1,5 @@
-const PokemonCard = ({ name, type, hp, attack }) => {
+const PokemonCard = ({ id, name, type, hp, attack }) => {
+  const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
   return (
     <div
       style={{
@@ -7,13 +8,19 @@ const PokemonCard = ({ name, type, hp, attack }) => {
         backgroundColor: "#f5f5f5",
         borderWidth: "1px",
         borderStyle: "solid",
-        borderColor: "#d5d5d5",
-        borderRadius: 4,
-        boxShadow: "2px 2px 10px rgba(78, 78, 78, 0.3)",
+        borderColor: "#f5f5f5",
+        borderRadius: 10,
+        boxShadow: "5px 5px 15px rgba(78, 78, 78, 0.3)",
         margin: 4,
+        paddingTop: 40,
       }}
     >
-      <h2>{name}</h2>
+      <img
+        src={imageUrl}
+        alt={name}
+        style={{ width: 125, height: 125, imageRendering: "pixelated" }}
+      />
+      <h2 style={{ color: "#111" }}>{name}</h2>
       <p>Type: {type}</p>
       <p>HP: {hp}</p>
       <p>Attack: {attack}</p>

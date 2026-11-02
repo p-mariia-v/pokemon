@@ -17,6 +17,7 @@ function App() {
     <div className="pokemon-grid">
       {pokemons.map((pokemon) => (
         <PokemonCard
+          id={pokemon.id}
           key={pokemon.id}
           name={pokemon.name}
           type={pokemon.type}
