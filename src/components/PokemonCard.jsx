@@ -1,9 +1,16 @@
+import { useState } from "react";
 import Slider from "./Slider";
+import typeColors from "../data/typeColors.js";
 
 const PokemonCard = ({ id, name, type, hp, attack }) => {
   const imageUrl = `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${id}.png`;
+  const typeColor = typeColors[type] ?? "#a8a8a8";
+  const [isHovered, setIsHovered] = useState(false);
+
   return (
     <div
+      onMouseEnter={() => setIsHovered(true)}
+      onMouseLeave={() => setIsHovered(false)}
       style={{
         width: "100%",
         height: 300,
@@ -12,7 +19,10 @@ const PokemonCard = ({ id, name, type, hp, attack }) => {
         borderStyle: "solid",
         borderColor: "#f5f5f5",
         borderRadius: 10,
-        boxShadow: "5px 5px 15px rgba(78, 78, 78, 0.3)",
+        boxShadow: isHovered
+          ? `5px 5px 20px ${typeColor}`
+          : "5px 5px 15px rgba(78, 78, 78, 0.3)",
+        transition: "box-shadow 0.25s ease",
         margin: 4,
         paddingTop: 40,
       }}
